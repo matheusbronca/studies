@@ -1,2 +1,2 @@
 # studies
-:book: :brain: Study of technologies in general
+:book: 🧠 Study of technologies in general
