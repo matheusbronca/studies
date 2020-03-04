@@ -1,0 +1,210 @@
+
+/* Estilo p/ Tablets */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+	
+	.header_menu {
+		margin-top: 15px;
+	}
+
+	.introducao {
+		margin-top: 0;
+		padding-top: 110px;
+	}
+
+	.introducao_interna{
+		margin-top: 77.11px;
+		padding-top: 25px;
+	}
+
+	.qualidade:after {
+		right: 66px;
+	}
+
+	.qualidade_lista li {
+		text-align: center;
+		padding: 0 10px;
+	}
+
+	/* Footer */
+	.footer_redes ul li a {
+		padding: 6px;
+	}
+
+	.footer_redes ul li a:hover {
+		padding: 6px;
+	}
+
+	.footer_redes ul li a img {
+		width: 26px;
+	}
+
+	/* Produtos */
+
+	.produto_item h2{
+		top: -150px;
+	}
+
+	.produto_icone {
+		background: black;
+		padding: 41px 0;
+	}
+
+	.produto-info p{
+		font-size: 14px;
+
+		height: 122px;
+		padding: 20px 30px;
+	}
+
+	.produto-info ul li{
+		background: #fec63e;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 20px;
+		float: left;
+		width: 181px;
+		height: 36.5px;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	.img-slide{
+		height: 221.56px;
+	}
+	
+	.third{
+		height: 222.8px;
+	}
+
+	
+}
+/* Final estilo p/ Tablets */
+
+/* Estilo p/ Smartphones */
+@media only screen and (max-width: 787px) {
+	
+	/* Header */
+	.header {
+		position: relative;
+		padding-bottom: 0px;
+	}
+
+	.header img{
+		margin: 0 auto -10px auto;
+
+	}
+
+	.header_menu {
+		text-align: center;
+
+	}
+
+	.header_menu ul li{
+		margin: 5px;
+	}
+
+	.header_menu ul li a {
+		border: 4px solid black;
+		width: 136px;
+		display: block;
+		float: left;
+	}
+
+	.header_menu .menu_ativo {
+
+		border: 4px solid white;
+	}
+
+	.header_menu ul li a:hover {
+		border-color: white;
+	}
+
+	/* Introdução */
+	.introducao {
+		margin-top: 0;
+		padding-top: 45px;
+	}
+
+	.introducao h1{
+		font-size: 36px;
+		line-height: 48px;
+	}
+
+	.introducao_interna {
+		margin-top: 0px;
+		padding-top: 25px;
+	}
+
+	.missao_sobre p{
+		padding-right: 0px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.missao_sobre ul li{
+		font-size: 14px;
+		line-height: 25px;
+	}
+
+	.qualidade:after {
+		display: none;
+	}
+
+	/* Call */
+	.call {
+		padding: 10px 0;
+		text-align: center;
+		clear: both;
+	}
+
+	/* Produtos */
+	.produto_item h2{
+		top: -102px;
+		margin-bottom: -68px;
+	}
+
+	.produto_icone {
+		background: black;
+		padding: 41px 0;
+	}
+
+	.produto-info p{
+		font-size: 14px;
+		height: auto;
+		padding: 20px 30px;
+	}
+
+	.produto-info ul li{
+		width: 149px;
+		height: 49px;
+		font-size: 14px;
+		padding-top: 15px;
+	}
+
+	.form {
+		padding-right: 0px;
+	}
+
+	.orcamento_dados ul{
+		padding-right: 0px;
+	}
+
+	/* Página Portfólio */
+
+	.img-slide{
+		height: 182.59px;
+	}
+
+	.third{
+		height: 89.36px;
+	}
+
+
+
+	/* Página de Contato */
+	.contato-form {
+		padding-right: 0px;
+		margin-bottom: 40px;
+	}
+}
