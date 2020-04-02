@@ -1,25 +1,34 @@
-# Front-end Boilerplate using Sass and Gulp 4
+# Gulp Boilerplate
 
-Using a set of boilerplate files when you're starting a website project can be a huge time-saver. Instead of having to start from scratch or copy and paste from previous projects, you can get up and running in just a minute or two.
+Hi there! This is a Gulp boilerplate to start your next project with Pug + Sass + Babel and more.
 
-I wanted to share my own boilerplate that I use for simple front-end websites that use HTML, SCSS, and JavaScript. And I'm using Gulp 4 to compile, prefix, and minify my files.
+## Main features
 
-I also wrote a rather detailed walkthrough on how to get up and running with Gulp 4, as well as migration tips from Gulp 3. 
+- [Gulp](<[https://gulpjs.com/](https://gulpjs.com/)>) - Making our life easier
+- [Sass](https://sass-lang.com/) - The preprocessor we trust and love with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+- [Pug](https://pugjs.org/api/getting-started.html) - Write less and beautiful HTML with [gulp-pug](https://www.npmjs.com/package/gulp-pug)
+- [Babel](https://babeljs.io/) - Next generation JS today with [gulp-babel](https://www.npmjs.com/package/gulp-babel)
 
-You can read that on my blog [here](https://coder-coder.com/gulp-4-walk-through).
+## Aditional features
 
-## Quickstart guide
+- [PostCSS](https://postcss.org/) - Next generation CSS with [gulp-postcss](https://www.npmjs.com/package/gulp-postcss), [autoprefixer](https://www.npmjs.com/package/autoprefixer) and minified with [cssnano](https://www.npmjs.com/package/cssnano)
+- [sanitize.css](https://github.com/csstools/sanitize.css) - Opinionated css resets based on [normalize.css](https://necolas.github.io/normalize.css/) but better! Includes base and typography.
+- [imagemin](https://github.com/imagemin/imagemin) - "Minify images seamlessly" with [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
+- [Browsersync](https://www.browsersync.io/) - Dev server plus auto reloading and styles injection with [browser-sync](https://www.npmjs.com/package/browser-sync)
+  and also...
+- [gulp-concat](https://www.npmjs.com/package/gulp-concat), [gulp-mode](https://www.npmjs.com/package/gulp-mode), [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps), [gulp-size](https://www.npmjs.com/package/gulp-size) and [del](https://www.npmjs.com/package/del)
 
-* Clone or download this Git repo onto your computer.
-* Install [Node.js](https://nodejs.org/en/) if you don't have it yet.
-* Run `npm install`
-* Run `gulp` to run the default Gulp task
+## Installation
 
-In this proejct, Gulp is configured to run the following functions:
+- Make sure you have [nodejs](https://nodejs.org/en/) and [gulp-cli](https://www.npmjs.com/package/gulp-cli) installed globally.
+- Clone this repo
+  `git clone https://github.com/borghettinho/gulp-boilerplate.git your-project-name`
+- Probably you don't want to keep track of this repo, so remove .git folder
+  `rm -rf .git`
+- Install dependencies with `npm install`
+- And you're good to go!
 
-* Compile the SCSS files to CSS
-* Autoprefix and minify the CSS file
-* Concatenate the JS files
-* Uglify the JS files
-* Move final CSS and JS files to the `/dist` folder
- 
+## Usage
+
+- `gulp --dev` for development mode
+- `gulp --prod` for production mode
