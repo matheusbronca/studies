@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: $bg-color;
+    border: 10px solid $border-color;
+    color: $text-color;
+    @include device(s) {
+        border: none;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    @include type-1(18);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.title {
+    @include type-1(18);
+    text-transform: uppercase;
+    @include device(s) {
+        margin-bottom: 40px;
+    }
+    &::after {
+        content: "";
+        display: block;
+        background: $text-color;
+        width: 70%;
+        float: right;
+        height: 2px;
+        margin-top: 14px;
+    @include device(m) {
+        width: 60%;
+    }
+    }
+
+}

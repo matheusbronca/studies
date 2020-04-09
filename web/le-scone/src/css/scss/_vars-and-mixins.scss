@@ -1,0 +1,40 @@
+// Cores
+$bg-color: #edece4;
+$border-color: #cbc6b9;
+$accent-color: #988c77;
+$text-color: #2a2426;
+$open-color: #1ab912;
+
+
+// Tipography
+$font-1: 'PT Mono', monospace;
+$font-2: 'Aref Ruqaa', serif;
+
+
+@function em($pixel, $context: 16) {
+    @return $pixel / $context + em;
+}
+
+@mixin type-1($size) {
+    font-family: $font-1;
+    @if $size == 18 {
+        font-size: em(18);
+        line-height: em(30, 18);
+    }
+}
+
+@mixin type-2($size) {
+    font-family: $font-2;
+    @if $size == 18 {
+        font-size: em(18);
+        line-height: em(30, 18);
+    }
+    @else if $size == 24 {
+        font-size: em(24);
+        line-height: em(30, 24);
+    }
+}
+
+@mixin  box-shadow($shadow...) {
+    box-shadow: $shadow;
+}

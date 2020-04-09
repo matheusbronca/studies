@@ -1,0 +1,72 @@
+.contact {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    @include device(s) {
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+}
+
+.contact form {
+    label {
+        @include type-1(18);
+        display: block;
+    }
+    input[type="text"], textarea {
+        @include type-1(18);
+        color: text-color;
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        border: 2px solid $accent-color;
+        background: transparent;
+        margin-bottom: 1em;
+        &:hover, &:focus {
+            outline: none;
+            border-color: $border-color;
+        }
+    }
+    textarea {
+        height: 120px;
+    }
+}
+
+input.button {
+    @include type-1(18);
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $accent-color;
+    border: 2px solid $accent-color;
+    background: transparent;
+    display: block;
+    width: 200px;
+    padding-top: 5px;
+    @include box-shadow(5px 5px 0 -2px $border-color, 5px 5px 0 0 $accent-color);
+    transition: .3s;
+    &:hover {
+        @include box-shadow(3px 3px 0 -2px $border-color, 3px 3px 0 0 $accent-color);
+    }
+}
+
+.contact-info {
+    color: $accent-color;    
+    margin-top: 2em;
+    margin-bottom: 3em;
+    @include device(l) {
+        text-align: right;
+        float: right;
+        margin-top: -3em;
+    }
+    p{
+        margin: 0;
+    }
+}
+
+.contact-map {
+    display: block;
+    @include box-shadow(0 0 0 10px $border-color);
+    clear: both;
+    img {
+        width: 100%;
+    }
+}

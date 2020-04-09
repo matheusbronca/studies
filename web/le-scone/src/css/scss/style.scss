@@ -1,0 +1,11 @@
+// GENERAL
+@import './base/sanitize';
+@import 'grid';
+@import 'vars-and-mixins';
+@import 'general';
+
+//PARTS
+@import 'intro';
+@import 'menu';
+@import 'contact';
+@import 'footer';
