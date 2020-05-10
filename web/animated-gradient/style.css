@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+.text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 2rem 4rem;
+}
+
+.gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 34%, #2BFF88 60%);
+    background-size: 150% 150%;
+    animation: gradientColors 10s ease infinite;
+}
+
+@keyframes gradientColors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
