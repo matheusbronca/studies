@@ -1,62 +1,50 @@
+"use strict";
 // boolean (true / false)
-let isOpen: boolean;
+var isOpen;
 isOpen = true;
-
 // string ('foo', "foo", `foo`)
-let message: string;
-message = `foo ${isOpen}`;
-
+var message;
+message = "foo " + isOpen;
 // number (int, float, hex, binary)
-let total: number;
+var total;
 total = 0xfff;
-
 // array (type[])
-let items: string[];
+var items;
 items = ["foo", "bar"];
-
-let values: Array<number>;
+var values;
 values = [1, 2, 3];
-
 // tuple
-let title: [number, string, string];
+var title;
 title = [1, "foo", "bar"];
-
 // enum
-enum Colors {
-    white = '#fff',
-    black = '#000'
-};
-
+var Colors;
+(function (Colors) {
+    Colors["white"] = "#fff";
+    Colors["black"] = "#000";
+})(Colors || (Colors = {}));
+;
 // any (qualquer tipo) NÃO UTILIZAR
-let thing: any;
+var thing;
 thing = [1];
-
 // void (vazio)
-function logger(): void {
+function logger() {
     console.log('foo');
-};
-
-// null | undefined (NÃO UTILIZAR COMO TIPO PRIMITIVO);
-type Bla = string | undefined;
-
+}
+;
 // never (Nunca retorna)
-function error(): never {
+function error() {
     throw new Error("error");
-};
-
+}
+;
 // object (QUALQUER COISA QUE NÃO SE ENCAIXE EM ALGUM DOS TIPOS PRIMITIVOS DISPONÍVEIS)
-let cart: object;
-
+var cart;
 cart = {
     speedUnit: "Miles"
 };
-
 // Type inference
 // Nem sempre é necessário tipar absolutamente tudo, o compilador consegue tipar automaticamente através da inferência;
-let message2 = "mensagem definida";
+var message2 = "mensagem definida";
 message2 = "string nova";
-
-window.addEventListener("click", (e) => {
+window.addEventListener("click", function (e) {
     console.log(e.target);
 });
-
