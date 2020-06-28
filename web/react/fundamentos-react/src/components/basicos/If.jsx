@@ -3,6 +3,6 @@ export default function (props) {
         return props.children
     }
     else {
-        return false
+        return false;
     }
 }
