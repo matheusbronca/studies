@@ -1,0 +1,1 @@
+this.ola = 'Olá, sou o módulo C'
