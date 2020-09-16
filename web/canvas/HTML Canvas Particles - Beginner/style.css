@@ -18,11 +18,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 7rem;
-  /* color: blue; */
   font-family: 'Days One', sans-serif;
   white-space: nowrap;
   padding: .1rem;
-  /* border-top: 0.4rem solid black; */
 }
 
 #title1::before {
