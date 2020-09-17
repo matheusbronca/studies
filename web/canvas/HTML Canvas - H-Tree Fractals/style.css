@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    font-size: 4rem;
+    z-index: 10;
+}
+
+.canvas {
+  position: absolute;
+  background: #fafafa;
+  height: 100%;
+  width: 100%;
+}
+
+.generate-tree-button {
+     font-family: 'Pangolin', cursive;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 5%;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 15px 15px;
+    border-radius: 10px;
+    background: blue;
+    color: white;
+    font-size: 1.5rem;
+    width: 180px;
+    overflow: hidden;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #36D1DC 0%, #5B86E5 51%, #36D1DC 100%)}
+.btn-grad:hover { background-position: right center; }
+
+@media screen and (max-width: 500px) {
+    .title {
+        top: 5%;
+        font-size: 3rem;
+    }
+}
