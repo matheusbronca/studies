@@ -1,2 +1,2 @@
 # studies
-:book: 🧠 Study of technologies in general
+📖 🧠 Study of technologies in general
