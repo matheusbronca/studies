@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Define as constantes do Software
 #define AMOUNT_1 1637.11
 #define AMOUNT_2 2453.50
 #define AMOUNT_3 3271.38
@@ -25,21 +26,28 @@
 #define TAX_D 22.5
 #define TAX_E 27.5
 
+// Inicia a rotina principal;
 int main() {
-
+    // Previne comportamentos inesperados em relação ao bufffer de saída;
     setbuf(stdout, NULL);
 
+    // String que armazena o nome do funcionário;
     char employeeName[50];
+    // Variável que armazena o salário do funcionário;
     float wage;
 
+    // Define a função protótipo de getTaxValue;
     float getTaxValue(float wage);
 
+    // Coleta o nome do funcionário;
     printf("Digite o nome do Funcionário: \n");
     scanf("%[^\n]", &*employeeName);
 
+    // Coleta o salário do funcionário;
     printf("Digite o salário do Funcionário: '\n");
     scanf("%f", &wage);
 
+    // Imprime o total de imposto a ser pago:
     system("clear");
     printf("Nome do Funcionário: %s \n", employeeName);
     printf("Salário: %f \n", wage);
@@ -48,6 +56,7 @@ int main() {
     return 0;
 }
 
+// Retorna o valor de imposto de renda à ser pago;
 float getTaxValue(float wage) {
     float tax;
     

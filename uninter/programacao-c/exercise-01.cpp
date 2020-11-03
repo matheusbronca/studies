@@ -4,25 +4,24 @@
 #define ROW 8
 #define COL 8
 
-int main()
-{
-    
-    // Variables
+// Rotina principal:
+int main() {
+    // Declaração de Variáveis; 
     int board[ROW][COL];
 
-    // Functions
+    // Declaração das Funções protótipo;
     void resetBoard(int board[][8]);
     void mainMenu(int board[][8]);
 
-    //Main Flow
+    //Invocação das funções protótipo;
     resetBoard(board);
     mainMenu(board);
-    
-    // setbuf(stdin, NULL);
 
+    // Sai do software
     return 0;
 }
 
+// Rotina responsável por resetar o tauleiro, atribuindo espaços vazios;
 void resetBoard(int board[][8]) {
     for(int row = 0; row < ROW; row++) {
         for(int col = 0; col < COL; col++) {
@@ -31,6 +30,7 @@ void resetBoard(int board[][8]) {
     }
 }
 
+// Rotina responsável por Imprimir e controlar o Menu do sistema;
 void mainMenu(int board[][8])
 {
 
@@ -74,8 +74,10 @@ void mainMenu(int board[][8])
     }
 }
 
+// Imprime tabuleiro;
 void printBoard(int board[][8]) {
-    
+
+    // Imprime numeração das colunas;
     system("clear");
 
     printf("         ");
@@ -101,26 +103,32 @@ void printBoard(int board[][8]) {
 
         for (int col = 0; col < COL; col++) {
             setbuf(stdout, NULL);
-
+            // Imprime numeração das linhas;
             if(col == 0) {
                 printf("%d *   ", row + 1);
                 printf("|");
             }
 
+            // Imprime peça correspondente ao campo;
             printf("__%d__|", board[row][col]);
         }
     }
 
     printf("\n\n");
     system("read -p \"Pressione qualquer tecla para retornar\" saindo");
+    // Retorna oa Menu principal;
     mainMenu(board);
 }
 
+// Rotina responsável por imprimir a quantidade de cada tipo de peça;
 void printPieces(int board[][8])
 {
+    // Definição de variáveis;
     int pawn = 0, knight = 0, rook = 0, bishop = 0, king = 0, queen = 0, none = 0;
+    // Variável responsável por checar qual peça está presente em determinado campo;
     int selectedPiece = 0;
 
+    // Percorre os campos e aumenta a quantidade de cada peça de acordo com a peça contida em cada campo;
     for (int row = 0; row < ROW; row++)
     {
         for (int col = 0; col < COL; col++)
@@ -164,14 +172,17 @@ void printPieces(int board[][8])
     printf("[%d] - ESPAÇO VAZIO", none);
     printf("\n\n");
     system("read -p \"Pressione qualquer tecla para retornar\" saindo");
+    // Retorna ao Menu Principal;
     mainMenu(board);
 }
 
-void insertPieceMenu(int board[][8])
-{
+// Imprime Menu para inserção de peças;
+void insertPieceMenu(int board[][8]) {
 
+    // Declaração de função protótipo;
     void insertPiece(int piece, int board[][8]);
 
+    // Variável de controle do menu;
     int opt;
 
     system("clear");
@@ -184,6 +195,7 @@ void insertPieceMenu(int board[][8])
     printf("\t[6] - RAINHA\n");
     scanf("%d", &opt);
 
+    // Seleciona peça;
     if (opt >= 1 && opt <= 6)
     {
         system("clear");
@@ -191,8 +203,7 @@ void insertPieceMenu(int board[][8])
         printf("==> Peça selecionada com sucesso! <==");
         system("read -p \"Pressione qualquer tecla para prosseguir\" saindo");
     }
-    else
-    {
+    else {
         system("clear");
         printf("==> *** Peça inválida, digite uma peça válida *** <==");
         system("read -p \"Pressione qualquer tecla para retornar ao Menu Principal.\" saindo");
@@ -200,8 +211,8 @@ void insertPieceMenu(int board[][8])
     }
 }
 
-void insertPiece(int piece, int board[][8])
-{
+// Rotina responsável por inserir uma peça ao tabuleiro;
+void insertPiece(int piece, int board[][8]) {
 
     int row, col;
 
