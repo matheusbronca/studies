@@ -1,0 +1,113 @@
+<div wm-slider>
+  <p>
+    <img
+      src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+      alt="Rochas com maré ao fundo"
+      height="342"
+      title="Muro da Cidade por Tarso Bessa"
+    />
+  </p>
+  <p>
+    <img
+      src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+      alt="Rochas com maré ao fundo"
+      height="342"
+      title="Muro da Cidade por Tarso Bessa"
+    />
+  </p>
+  <p class="circular">
+    <img
+      src="http://files.cod3r.com.br/curso-web/imagem3.png"
+      alt="Rochas com maré ao fundo"
+      height="342"
+      title="Muro da Cidade por Tarso Bessa"
+    />
+  </p>
+
+  <p class="texto">
+    <img
+      src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+      alt="Avatar"
+      height="50"
+      align="left"
+    />
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde sit
+    dignissimos iusto quae aut cupiditate accusamus, quam ipsam optio maxime,
+    porro tempore ipsa aliquam nesciunt impedit nemo aperiam! Harum, quibusdam!
+  </p>
+
+  <p class="cidade"></p>
+
+  <p>
+    <picture>
+      <source
+        srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+        media="(min-width: 600px)"
+      />
+      <img
+        src="http://files.cod3r.com.br/curso-web/logo-estreita.png"
+        alt="Logo"
+      />
+    </picture>
+  </p>
+</div>
+
+<style>
+  p {
+    position: absolute;
+    display: none;
+  }
+
+  .circular {
+    width: 513px;
+  }
+
+  .texto {
+    width: 400px;
+  }
+
+  .texto img {
+    margin-right: 11px;
+  }
+
+  .cidade {
+    width: 513px;
+    height: 342px;
+    background-image: url(http://files.cod3r.com.br/curso-web/imagem4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200%;
+  }
+</style>
+
+<script>
+  // função(ponto de partida, onde voce quer chegar)
+  const slider = document.querySelector('[wm-slider]');
+  console.log(slider);
+
+  const slides = Array.from(slider.querySelectorAll('p'));
+  console.log(slides);
+
+  let counter = 0;
+
+  const nextSlide = () => {
+    counter++;
+    counter >= slides.length - 1
+    ? counter = 0 : counter = counter;
+    moveSlide(slides[counter], 1000, -700, 20, nextSlide);
+  }
+
+  const moveSlide = (slide, startPoint, endPoint, step, callback) => {
+    const newStart = startPoint - step;
+    slide.style.display = 'block';
+    slide.style.left   = `${newStart}px`; 
+
+    if (newStart >= endPoint) {
+      setTimeout(() => moveSlide(slide, newStart, endPoint, step, callback), 5);
+    } else {
+      callback();
+    }
+  };
+
+  moveSlide(slides[0], 1000, -700, 20,() => nextSlide());
+</script>

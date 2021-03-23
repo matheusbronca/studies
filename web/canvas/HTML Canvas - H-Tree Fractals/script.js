@@ -83,7 +83,15 @@ function drawTree(
   ctx.restore();
 }
 
-drawTree($canvas.width / 2, $canvas.height - 80, length, 0, 25, 'brown', 'green');
+drawTree(
+  $canvas.width / 2,
+  $canvas.height - 80,
+  length,
+  0,
+  25,
+  'brown',
+  'green'
+);
 
 function generateRandomTree(deviceWidth) {
   ctx.clearRect(0, 0, $canvas.width, $canvas.height);
