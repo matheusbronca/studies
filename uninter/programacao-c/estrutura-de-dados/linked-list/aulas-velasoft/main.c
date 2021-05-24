@@ -25,6 +25,11 @@ Node* atPos(List* list, int index);
 int indexOf(List* list, Node* node);
 void removeAt(List* list, int index);
 void insertAt(List* list,DataNode data, int index);
+void swapItems(List* list, Node* itemA, Node* itemB);
+Node* min(List* list, int starter_seek_index);
+Node* max(List* list, int starter_seek_index);
+void ascSort(List* list);
+void descSort(List* list);
 
 int main(void) {
   
@@ -45,12 +50,11 @@ int main(void) {
 
   data.id = 7;
   push(list, data);
-
-  pop(list);
   printList(list);
 
-  printf("Nó ID => %d\n", atPos(list, 1)->data.id);
-  removeAt(list, 0);
+  swapItems(list, atPos(list, 0), atPos(list,4));
+
+  descSort(list);
   printList(list);
 
   getchar();
@@ -87,6 +91,7 @@ void printList(List* list) {
     printf("\tID: [ %d ]\n", temp->data.id);
     temp = temp->next;
   }
+  printf("\n\n");
 }
 
 bool isEmpty(List* list) {
@@ -160,12 +165,116 @@ void removeAt(List* list, int index) {
 
 void insertAt(List* list, DataNode data, int index) {
 
-  if(index >= 0 && index < list->size) {
-    Node* temp = list->head;
+  if(index == 0) {
+    push(list, data);
+  } else {
+    Node* current = atPos(list, index);
+
+    if(current != NULL) {
+      Node* previous = atPos(list, index -1);
+      Node* newNode = (Node*)malloc(sizeof(Node));
+      newNode->data = data;
+
+      previous->next = newNode;
+      newNode->next = current;
+      list->size++;
+    }
+  }
+}
+
+void swapItems(List* list, Node* itemA, Node* itemB) {
+
+  if(itemA == itemB) 
+    return;
+
+  int indexA = indexOf(list, itemA);
+  int indexB = indexOf(list, itemB);
+
+  if(indexA == -1 || indexB == -1)
+    return;
+
+  if(indexA > indexB) {
+    itemA = itemB;
+    itemB = atPos(list, indexA);
+
+
+    indexA = indexB;
+    indexB = indexOf(list, itemB);
+  }
 
 
 
+  Node* itemB_prev = atPos(list,indexB - 1);
 
+  if(itemA == list->head) {
+    list->head = itemB;
+
+  } else {
+    Node* itemA_prev = atPos(list, indexA - 1);
+    itemA_prev->next = itemB;
+  }
+
+  itemB_prev->next = itemA;
+
+  Node* itemA_next = itemA->next;
+  itemA->next = itemB->next;
+  itemB->next = itemA_next;
+}
+
+Node* min(List* list, int starter_seek_index) {
+  Node* temp = atPos(list, starter_seek_index);
+
+  if(temp != NULL) {
+    Node* smallestItem = temp;
+
+    while(temp != NULL) {
+      if(temp->data.id < smallestItem->data.id) {
+        smallestItem = temp;
+      }
+
+      temp = temp->next;
+    }
+
+    return smallestItem;
+  }
+
+  return NULL;
+
+}
+
+Node* max(List* list, int starter_seek_index) {
+  Node* temp = atPos(list, starter_seek_index);
+
+  if(temp != NULL) {
+    Node* smallestItem = temp;
+
+    while(temp != NULL) {
+      if(temp->data.id > smallestItem->data.id) {
+        smallestItem = temp;
+      }
+
+      temp = temp->next;
+    }
+
+    return smallestItem;
+  }
+
+  return NULL;
+
+}
+
+void ascSort(List* list) {
+
+  for (int i = 0; i < list->size - 1; i++) {
+    swapItems(list, atPos(list, i), min(list, i));
+  }
+
+}
+
+void descSort(List* list) {
+
+  for (int i = 0; i < list->size -1; i++) {
+    swapItems(list, atPos(list, i), max(list, i));
   }
 
 }
