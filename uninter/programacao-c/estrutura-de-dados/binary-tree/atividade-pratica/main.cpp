@@ -92,7 +92,7 @@ int main(void) {
 
     case 3:
       system("clear");
-      printf("=== [ Buscar Aluno - ÁRVORE BINÁoRIA ] === \n\n");
+      printf("=== [ Buscar Aluno - ÁRVORE BINÁRIA ] === \n\n");
       printf("Digite o número de Registro Único (RU) do aluno que deseja "
              "buscar na árvore binária: ");
       scanf(" %d", &ru);
@@ -144,6 +144,7 @@ void insertRight(Node *node, Student *to_insert, int *tree_size) {
     new_node->right = NULL;
 
     node->right = new_node;
+    // atualiza o tamanho (número de registros) na Árvore
     (*tree_size)++;
   } else {
     if (to_insert->ru < node->right->student_data->ru) {
@@ -165,6 +166,7 @@ void insertLeft(Node *node, Student *to_insert, int *tree_size) {
     new_node->right = NULL;
 
     node->left = new_node;
+    // atualiza o tamanho (número de registros) na Árvore
     (*tree_size)++;
   } else {
     if (to_insert->ru < node->left->student_data->ru) {
@@ -176,6 +178,7 @@ void insertLeft(Node *node, Student *to_insert, int *tree_size) {
   }
 }
 
+// Função para inserção do nó RAIZ na Árvore;
 void insertNode(BinaryTree *source_tree, Student *to_insert) {
   if (source_tree->root == NULL) {
 
@@ -187,8 +190,12 @@ void insertNode(BinaryTree *source_tree, Student *to_insert) {
     source_tree->root = new_node;
     source_tree->size = 1;
   } else {
+
+    // Ponteiro auxiliar que aponta para o tamanho da Árvore
     int *tree_size = &source_tree->size;
 
+    // Caso o nó Raiz não seja nulo invoca recursivamente as funções
+    // para inserção de nó a Esquerda / Direita
     if (to_insert->ru < source_tree->root->student_data->ru) {
       insertLeft(source_tree->root, to_insert, tree_size);
     }
@@ -198,6 +205,7 @@ void insertNode(BinaryTree *source_tree, Student *to_insert) {
   }
 }
 
+// Imprime um Nó específico, passado como parâmetro;
 void printNode(Node *root) {
   if (root != NULL) {
     printNode(root->left);
@@ -206,8 +214,10 @@ void printNode(Node *root) {
   }
 }
 
+// Imprime todos os nós registrados na Árvore binária;
 void print(BinaryTree *tree) { printNode(tree->root); }
 
+// Popula a Árvore com Alunos;
 void populateTree(BinaryTree *tree) {
   registerStudent(tree, "Monice Cristina da Silva", "monicecristina@gmail.com",
                   2784001);
@@ -222,6 +232,7 @@ void populateTree(BinaryTree *tree) {
   registerStudent(tree, "Helena Cunha", "helena@gmail.com", 2822566);
 }
 
+// Busca e devolve um Aluno através do RU passado como parâmetro;
 Student *search(Node *root, int ru_value) {
   if (root == NULL) {
     return NULL;
@@ -238,6 +249,7 @@ Student *search(Node *root, int ru_value) {
   }
 }
 
+// Imprime dados de um Aluno;
 void printStudent(Student *to_be_printed) {
 
   if (to_be_printed != NULL) {
@@ -257,6 +269,7 @@ void printStudent(Student *to_be_printed) {
   }
 }
 
+// Limpa o Buffer;
 void clearBuffer() {
   char c;
   while ((c = getchar() != '\n' && c != EOF)) {
